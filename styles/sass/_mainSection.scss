@@ -1,0 +1,101 @@
+.mainSection {
+
+    overflow: hidden;
+
+    button {
+        &:hover {
+            cursor: pointer;
+            opacity: 0.75;
+        }
+    }
+
+    h1 {
+        font-family: 'Barlow condensed';
+        font-weight: 700;
+        font-size: 3em;
+        color: var(--DarkBlue);
+        margin-top: .19em;
+    }
+
+    h4 {
+        color: var(--DarkGrayishBlue);
+        font-weight: normal;
+        margin-top: 1.4em;
+    }
+
+    span {
+        font-size: .8em;
+        color: var(--GrayishBlue);
+    }
+
+    .mainSectionGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 30em;
+        grid-template-areas: "left image";
+        gap: 2em;
+        position: relative;
+        align-items: center;
+
+
+        .mainImage {
+            grid-area: image;
+            right: -24em;
+            position: absolute;
+        }
+
+        .leftInfo {
+            grid-area: left;
+        }
+    }
+
+    .sheduleButton {
+        font-size: .8em;
+        font-family: "Barlow condensed";
+        font-weight: bold;
+        color: var(--LightGrayishBlue);
+        padding: .8em 2.3em;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: var(--Red);
+        margin-top: 2.3em;
+        margin-right: .8em;
+
+
+    }
+
+    .newButton {
+        background-color: var(--DarkBlue);
+        color: #FFF;
+        border: none;
+        border-radius: 50px;
+        outline: none;
+        padding: .3em .7em;
+        font-weight: bold;
+        margin-right: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .mainSection {
+        .mainSectionGrid {
+            grid-auto-flow: column;
+            grid-template-areas: "image"
+                "left";
+            grid-template-columns: 1fr;
+
+
+            .mainImage {
+                position: absolute;
+                right: -13em;
+
+                img {
+                    height: 260px;
+                }
+            }
+
+        }
+    }
+}
